@@ -81,4 +81,6 @@ Inside `FDMheston.py`, you can perform the following tasks:
 
 ---
 
-This program serves as a robust tool for exploring finite difference methods in computat
+## Summary
+
+This program serves as a robust tool for exploring finite difference methods in derivative pricing, providing valuable insights into efficient solutions for multi-dimensional PDE solvers.
