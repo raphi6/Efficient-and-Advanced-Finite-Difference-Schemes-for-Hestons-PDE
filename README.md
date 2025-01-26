@@ -31,7 +31,7 @@ How to Use my Program :
 		- plot discretisation errors by setting either, plot_spatial = True  OR  plot_temporal = True
 		- enable damping for Douglas by setting damping_Do = True
 		- enable damping for Craig-Sneyd by setting damping_CS = True
-		- print time to complete the following parts by uncommenting the following:
+		- print computation time by uncommenting the following:
 			
 			#print("Computation Time (ADI loop):", time)
 			#print("Computation Time 2 (A matrix):", time2)
