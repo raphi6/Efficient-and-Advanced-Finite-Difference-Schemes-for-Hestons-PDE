@@ -1,45 +1,84 @@
 # Dissertation
-Solving Heston's partial differential equation by finite difference methods.
+
+**Solving Heston's Partial Differential Equation by Finite Difference Methods**
+
+---
 
 # Code
 
-Introduction :
+## Introduction
 
-	This program provides an implementation as described in the report, it prices European Call options under
-	the Heston Stochastic Volatility model by Finite Difference Methods to solve the PDE. This is done by:
- 	
-  	- Discretising over non-uniform grids,
-   	- Utilising "the ubiquitous Kronecker product",
-    - Applying ADI time stepping schemes.
-     	
-      	There are also functions to plot results and analysis.
+This program provides an implementation of finite difference methods to price European call options under the Heston stochastic volatility model by solving its partial differential equation (PDE). The methodology includes:
 
-How to Use my Program :
+- Discretising the PDE over **non-uniform grids** for better accuracy.
+- Leveraging the **ubiquitous Kronecker product** to optimise computations.
+- Applying **Alternating Direction Implicit (ADI)** time-stepping schemes for stability and efficiency.
 
-    	Recommend to use PyCharm Community edition with Python 3.9
-	
-	- Extract the zip file
-	- Download the dependencies from the import section
-	- Open FDMheston.py. Now inside there are multiple options, you can:
-		
-		- run the function FDMheston() on its own with starting parameters.
-  
-			- change the arguments for Heston parameters
-			- change the following two parameters for initial S0 and v0: S_current = ... V_current = ... 
-	
-    - activate plotting of surface by setting, plot_all = True
-		- plot discretisation errors by setting either, plot_spatial = True  OR  plot_temporal = True
-		- enable damping for Douglas by setting damping_Do = True
-		- enable damping for Craig-Sneyd by setting damping_CS = True
-		- print computation time by uncommenting the following:
-			
-			#print("Computation Time (ADI loop):", time)
-			#print("Computation Time 2 (A matrix):", time2)
-			#print("Computation time (All): ", time4)
+Additionally, the program contains functions to generate plots for results, the Greeks and error analysis.
 
-		- plot the A matrices by uncommenting the following, this reveals their mentioned structure:
-					
-				# plot_sparse_matrix(A_0, 'A_0')
-				# plot_sparse_matrix(A_1, "A_1")
-				# plot_sparse_matrix(A_2, "A_2")
-				# plot_sparse_matrix(A, "A")
+---
+
+## How to Use My Program
+
+### Prerequisites:
+- **Python Version**: Recommend using Python 3.9
+- **Development Environment**: PyCharm Community Edition or any Python IDE.
+
+### Steps to Run:
+1. Extract the zip file containing the code.
+2. Install the necessary dependencies listed in the `import` section of the file.
+3. Open the `FDMheston.py` file in your IDE.
+
+---
+
+### Program Options:
+Inside `FDMheston.py`, you can perform the following tasks:
+
+1. **Run the Heston PDE Solver**:
+   - Execute the function `FDMheston()` with default starting parameters.
+   - Customise the arguments to adjust the Heston model parameters.
+   - Update the initial stock price (`S0`) and variance (`v0`) by modifying:
+     ```python
+     S_current = ...
+     V_current = ...
+     ```
+
+2. **Enable Plotting**:
+   - Activate surface plotting by setting:
+     ```python
+     plot_all = True
+     ```
+   - Plot discretisation errors:
+     - Spatial error: `plot_spatial = True`
+     - Temporal error: `plot_temporal = True`
+
+3. **Refine Time-Stepping Schemes**:
+   - Enable damping for the **Douglas scheme**:
+     ```python
+     damping_Do = True
+     ```
+   - Enable damping for the **Craig-Sneyd scheme**:
+     ```python
+     damping_CS = True
+     ```
+
+4. **Measure Performance**:
+   - Uncomment the following lines to print computation times:
+     ```python
+     # print("Computation Time (ADI loop):", time)
+     # print("Computation Time 2 (A matrix):", time2)
+     # print("Computation Time (All):", time4)
+     ```
+
+5. **Visualise Sparse Matrices**:
+   - Uncomment the following lines to plot the structure of the `A` matrices:
+     ```python
+     # plot_sparse_matrix(A_0, 'A_0')
+     # plot_sparse_matrix(A_1, "A_1")
+     # plot_sparse_matrix(A_2, "A_2")
+     # plot_sparse_matrix(A, "A")
+     ```
+
+---
+
+This program serves as a robust tool for exploring finite difference methods in computat
