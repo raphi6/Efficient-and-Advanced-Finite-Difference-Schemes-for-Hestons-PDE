@@ -8,8 +8,8 @@ Introduction :
 	This program provides an implementation as described in the report, it prices European Call options under
 	the Heston Stochastic Volatility model by Finite Difference Methods to solve the PDE. This is done by:
  	
-  	- Discretising over non-uniform grids.
-   	- Utilising "the ubiquitous Kronecker product".
+  	- Discretising over non-uniform grids,
+   	- Utilising "the ubiquitous Kronecker product",
     - Applying ADI time stepping schemes.
      	
       	There are also functions to plot results and analysis.
